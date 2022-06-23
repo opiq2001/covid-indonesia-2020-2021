@@ -173,5 +173,3 @@ tabs = Tabs(tabs = [tab1, tab2])
 # Put the tabs in the current document for display
 curdoc().add_root(tabs)
 curdoc().title = "Data Covid Tiap Provinsi di Indonesia "
-
-show(tabs)
