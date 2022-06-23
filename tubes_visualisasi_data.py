@@ -115,7 +115,7 @@ def Tab_Bar(data_idn):
     source =  ColumnDataSource(data=data)
 
     # Set tools yang akan digunakna pada Plots
-    corr_tools = "pan, wheel_zoom, box_select, reset, hover"
+    corr_tools = "pan, wheel_zoom, box_select, reset"
 
     # Membuat bar diagram 
     bar = figure(width=5000, height=610, tools=corr_tools, x_range=data["Province"], toolbar_location="below")
