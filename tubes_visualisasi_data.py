@@ -115,7 +115,7 @@ def Tab_Bar(data_idn):
     source =  ColumnDataSource(data=data)
 
     # Set tools yang akan digunakna pada Plots
-    corr_tools = "pan, wheel_zoom, box_select, reset"
+    corr_tools = "pan, wheel_zoom, box_select, reset, hover"
 
     # Membuat bar diagram 
     bar = figure(width=5000, height=610, tools=corr_tools, x_range=data["Province"], toolbar_location="below")
@@ -157,7 +157,10 @@ from bokeh.models.widgets import Tabs # import Tabs digunakna untuk membuat tab 
 from bokeh.io import curdoc # import curdoc 
 from bokeh.plotting import figure, output_file, show
 
-data_idn = pd.read_csv("https://raw.githubusercontent.com/opiq2001/anydata/main/Indonesia_coronavirus_daily_data.csv")
+data_idn = pd.read_csv(
+    join(dirname(__file__), "data", "Indonesia_coronavirus_daily_data.csv"), index_col=0
+)
+#data_idn = pd.read_csv("https://raw.githubusercontent.com/opiq2001/anydata/main/Indonesia_coronavirus_daily_data.csv")
 data_idn['Date'] = pd.to_datetime(data_idn['Date'], format='%Y-%m-%d')
 
 # Membuat Tab 
